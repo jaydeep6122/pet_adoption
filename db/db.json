@@ -1,0 +1,304 @@
+{
+    "pets": [
+        {
+            "type": "dog",
+            "name": "Buddy",
+            "age": "3 years",
+            "adopt": true,
+            "additionalInfo": "friendly",
+            "location": "California",
+            "address": "123 Woof Street",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Whiskers",
+            "age": "2 years",
+            "adopt": false,
+            "additionalInfo": "playful",
+            "location": "New York",
+            "address": "456 Meow Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Cotton",
+            "age": "1 year",
+            "adopt": true,
+            "additionalInfo": "soft fur",
+            "location": "Texas",
+            "address": "789 Bunny Lane",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Shellie",
+            "age": "5 years",
+            "adopt": false,
+            "additionalInfo": "slow and steady",
+            "location": "Florida",
+            "address": "101 Shell Street",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Rio",
+            "age": "2 years",
+            "adopt": true,
+            "additionalInfo": "colorful feathers",
+            "location": "Arizona",
+            "address": "321 Perch Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        },
+        {
+            "type": "dog",
+            "name": "Max",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "energetic",
+            "location": "Texas",
+            "address": "555 Bark Lane",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Mittens",
+            "age": "3 years",
+            "adopt": true,
+            "additionalInfo": "cuddly",
+            "location": "California",
+            "address": "777 Purr Street",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Thumper",
+            "age": "2 years",
+            "adopt": false,
+            "additionalInfo": "hops a lot",
+            "location": "New York",
+            "address": "888 Bunny Trail",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Shelly",
+            "age": "6 years",
+            "adopt": true,
+            "additionalInfo": "wise and slow",
+            "location": "Florida",
+            "address": "555 Shell Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Polly",
+            "age": "3 years",
+            "adopt": false,
+            "additionalInfo": "talkative",
+            "location": "Arizona",
+            "address": "999 Perch Lane",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        },
+        {
+            "type": "dog",
+            "name": "Charlie",
+            "age": "5 years",
+            "adopt": true,
+            "additionalInfo": "loyal",
+            "location": "Texas",
+            "address": "111 Bark Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Oscar",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "independent",
+            "location": "California",
+            "address": "222 Purr Lane",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Flopsy",
+            "age": "1 year",
+            "adopt": true,
+            "additionalInfo": "loves carrots",
+            "location": "New York",
+            "address": "333 Bunny Street",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Speedy",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "fast for a turtle",
+            "location": "Florida",
+            "address": "444 Speed Lane",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Squawkers",
+            "age": "2 years",
+            "adopt": true,
+            "additionalInfo": "noisy but cute",
+            "location": "Arizona",
+            "address": "555 Squawk Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        },
+        {
+            "type": "dog",
+            "name": "Buddy",
+            "age": "3 years",
+            "adopt": true,
+            "additionalInfo": "friendly",
+            "location": "California",
+            "address": "123 Woof Street",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Whiskers",
+            "age": "2 years",
+            "adopt": false,
+            "additionalInfo": "playful",
+            "location": "New York",
+            "address": "456 Meow Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Cotton",
+            "age": "1 year",
+            "adopt": true,
+            "additionalInfo": "soft fur",
+            "location": "Texas",
+            "address": "789 Bunny Lane",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Shellie",
+            "age": "5 years",
+            "adopt": false,
+            "additionalInfo": "slow and steady",
+            "location": "Florida",
+            "address": "101 Shell Street",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Rio",
+            "age": "2 years",
+            "adopt": true,
+            "additionalInfo": "colorful feathers",
+            "location": "Arizona",
+            "address": "321 Perch Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        },
+        {
+            "type": "dog",
+            "name": "Max",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "energetic",
+            "location": "Texas",
+            "address": "555 Bark Lane",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Mittens",
+            "age": "3 years",
+            "adopt": true,
+            "additionalInfo": "cuddly",
+            "location": "California",
+            "address": "777 Purr Street",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Thumper",
+            "age": "2 years",
+            "adopt": false,
+            "additionalInfo": "hops a lot",
+            "location": "New York",
+            "address": "888 Bunny Trail",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Shelly",
+            "age": "6 years",
+            "adopt": true,
+            "additionalInfo": "wise and slow",
+            "location": "Florida",
+            "address": "555 Shell Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Polly",
+            "age": "3 years",
+            "adopt": false,
+            "additionalInfo": "talkative",
+            "location": "Arizona",
+            "address": "999 Perch Lane",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        },
+        {
+            "type": "dog",
+            "name": "Charlie",
+            "age": "5 years",
+            "adopt": true,
+            "additionalInfo": "loyal",
+            "location": "Texas",
+            "address": "111 Bark Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/2e/4a/a8/2e4aa83c34d4c129415e4a6f382a4f92.jpg"
+        },
+        {
+            "type": "cat",
+            "name": "Oscar",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "independent",
+            "location": "California",
+            "address": "222 Purr Lane",
+            "photoUrl": "https://i.pinimg.com/564x/41/2d/e7/412de75c215744861393dc96374584ac.jpg"
+        },
+        {
+            "type": "rabbit",
+            "name": "Flopsy",
+            "age": "1 year",
+            "adopt": true,
+            "additionalInfo": "loves carrots",
+            "location": "New York",
+            "address": "333 Bunny Street",
+            "photoUrl": "https://i.pinimg.com/564x/48/cd/63/48cd634afbce7a5118e39f76d9a235e8.jpg"
+        },
+        {
+            "type": "turtle",
+            "name": "Speedy",
+            "age": "4 years",
+            "adopt": false,
+            "additionalInfo": "fast for a turtle",
+            "location": "Florida",
+            "address": "444 Speed Lane",
+            "photoUrl": "https://i.pinimg.com/564x/52/56/da/5256daf9866bad3bf24a3d140e03eb82.jpg"
+        },
+        {
+            "type": "parrot",
+            "name": "Squawkers",
+            "age": "2 years",
+            "adopt": true,
+            "additionalInfo": "noisy but cute",
+            "location": "Arizona",
+            "address": "555 Squawk Avenue",
+            "photoUrl": "https://i.pinimg.com/564x/16/1c/3a/161c3a459dc8dedb921fc0f5f74b91a5.jpg"
+        }
+    ]
+}
