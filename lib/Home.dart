@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_adoption/history.dart';
 import 'package:pet_adoption/petdetails.dart';
 import 'package:pet_adoption/provider/pet_provider.dart';
 
@@ -16,8 +17,9 @@ class _HomeState extends State<Home> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Provider.of<petProvider>(context, listen: false).getAllpets();
+      Provider.of<petProvider>(context, listen: false).getAllpets("");
     });
   }
 
@@ -46,33 +48,50 @@ class _HomeState extends State<Home> {
                           size: 35,
                         )),
                     //Search Bar
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: Colors.grey[200],
-                      ),
-                      height: MediaQuery.sizeOf(context).height * 0.07,
-                      width: MediaQuery.sizeOf(context).width * 0.6,
-                      child: Center(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            prefixIcon: const Icon(Icons.search),
-                            hintText: "Search by name ",
-                            hintStyle: const TextStyle(fontSize: 13),
-                            contentPadding: EdgeInsets.symmetric(
-                                vertical:
-                                    MediaQuery.sizeOf(context).height * 0.009),
+                    Consumer<petProvider>(
+                      builder: (BuildContext context, value, Widget? child) {
+                        return Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Colors.grey[200],
                           ),
-                        ),
+                          height: MediaQuery.sizeOf(context).height * 0.07,
+                          width: MediaQuery.sizeOf(context).width * 0.6,
+                          child: Center(
+                            child: TextField(
+                              onChanged: (valuee) {
+                                value.getAllpets(
+                                    valuee.toLowerCase().toString());
+                              },
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                prefixIcon: const Icon(Icons.search),
+                                hintText: "Search by name ",
+                                hintStyle: const TextStyle(fontSize: 13),
+                                contentPadding: EdgeInsets.symmetric(
+                                    vertical:
+                                        MediaQuery.sizeOf(context).height *
+                                            0.009),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    // History Button
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const historypage(),
+                            ));
+                      },
+                      child: const CircleAvatar(
+                        radius: 25,
+                        child: Icon(Icons.history),
                       ),
-                    ),
-                    // Profile Pic
-                    const CircleAvatar(
-                      radius: 25,
-                      backgroundImage: NetworkImage(
-                          "https://img.freepik.com/premium-photo/portrait-cheerful-bearded-arabic-guy-posing-urban-area_116547-70796.jpg"),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -88,31 +107,182 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Column(
-                              children: [
-                                Container(
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.09,
-                                  child: const Image(
-                                    image: AssetImage("assets/dog.png"),
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: Colors.amber[500],
-                                      borderRadius: BorderRadius.circular(15)),
-                                  margin: EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.sizeOf(context).width * 0.02,
-                                  ),
-                                  width: MediaQuery.sizeOf(context).width * 0.2,
-                                ),
-                                Text("Dog")
-                              ],
-                            );
-                          }),
-                    )
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          Column(
+                            children: [
+                              Consumer<petProvider>(
+                                builder: (BuildContext context, value,
+                                    Widget? child) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      value.getAllpets("");
+                                    },
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.09,
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber[500],
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.02,
+                                      ),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.2,
+                                      child: const Image(
+                                        image: AssetImage("assets/all.png"),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const Text("All")
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Consumer<petProvider>(
+                                builder: (BuildContext context, value,
+                                    Widget? child) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      value.getAllDogs();
+                                    },
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.09,
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber[500],
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.02,
+                                      ),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.2,
+                                      child: const Image(
+                                        image: AssetImage("assets/dog.png"),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const Text("Dog")
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Consumer<petProvider>(
+                                builder: (BuildContext context, value,
+                                    Widget? child) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      value.getAllcat();
+                                    },
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.09,
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber[500],
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.02,
+                                      ),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.2,
+                                      child: const Image(
+                                        image: AssetImage("assets/cat.png"),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const Text("Cat")
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Consumer<petProvider>(
+                                builder: (BuildContext context, value,
+                                    Widget? child) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      value.getAllparrot();
+                                    },
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.09,
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber[500],
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.02,
+                                      ),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.2,
+                                      child: const Image(
+                                        image: AssetImage("assets/parrot.png"),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const Text("parrot")
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Consumer<petProvider>(
+                                builder: (BuildContext context, value,
+                                    Widget? child) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      value.getAllturtle();
+                                    },
+                                    child: Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.09,
+                                      decoration: BoxDecoration(
+                                          color: Colors.amber[500],
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.02,
+                                      ),
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.2,
+                                      child: const Image(
+                                        image: AssetImage("assets/tourtle.png"),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              const Text("turtle")
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -134,15 +304,15 @@ class _HomeState extends State<Home> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) => petdetails(
-                                            name: "${value.pets[index].name}",
-                                            type: "${value.pets[index].type}",
-                                            age: "${value.pets[index].age}",
+                                            name: value.pets[index].name,
+                                            type: value.pets[index].type,
+                                            age: value.pets[index].age,
                                             location:
-                                                "${value.pets[index].location}",
+                                                value.pets[index].location,
                                             adopt: value.pets[index].adopt,
                                             index: index,
                                             image:
-                                                "${value.pets[index].photourl}")));
+                                                value.pets[index].photourl)));
                               },
                               child: Container(
                                 decoration: BoxDecoration(
@@ -175,7 +345,7 @@ class _HomeState extends State<Home> {
                                           0.03),
                                   // Text on pet image
                                   child: value.isLoading
-                                      ? Center(
+                                      ? const Center(
                                           child: CircularProgressIndicator(),
                                         )
                                       : Column(
@@ -184,24 +354,36 @@ class _HomeState extends State<Home> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              "${value.pets[index].name}",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  value.pets[index].name,
+                                                  style: const TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 20,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                if (value.pets[index].adopt)
+                                                  Icon(Icons.check_circle,
+                                                      color: Colors.green)
+                                              ],
                                             ),
                                             Text(
-                                              "${value.pets[index].type}",
-                                              style: TextStyle(
+                                              value.pets[index].type,
+                                              style: const TextStyle(
                                                   color: Colors.white,
                                                   fontSize: 15),
                                             ),
-                                            Text(
-                                              "Age : ${value.pets[index].age}",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 15),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "Age : ${value.pets[index].age}",
+                                                  style: const TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15),
+                                                ),
+                                              ],
                                             ),
                                           ],
                                         ),

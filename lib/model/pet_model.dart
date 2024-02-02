@@ -8,6 +8,7 @@ class petsDetails {
   final String photourl;
   final String location;
   final String type;
+  final DateTime adoptat;
 
   petsDetails({
     required this.name,
@@ -17,5 +18,6 @@ class petsDetails {
     required this.photourl,
     required this.location,
     required this.type,
+    required this.adoptat,
   });
 }
