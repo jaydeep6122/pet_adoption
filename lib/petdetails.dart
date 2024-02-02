@@ -4,11 +4,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pet_adoption/Home.dart';
-import 'package:pet_adoption/history.dart';
+
 import 'package:pet_adoption/provider/pet_provider.dart';
 import 'package:provider/provider.dart';
-
-import 'package:http/http.dart' as http;
 
 class petdetails extends StatefulWidget {
   final String name;
@@ -18,6 +16,7 @@ class petdetails extends StatefulWidget {
   final bool adopt;
   final int index;
   final String image;
+  final int price;
   const petdetails(
       {super.key,
       required this.name,
@@ -26,13 +25,21 @@ class petdetails extends StatefulWidget {
       required this.location,
       required this.adopt,
       required this.index,
-      required this.image});
+      required this.image,
+      required this.price});
 
   @override
   State<petdetails> createState() => _petdetailsState();
 }
 
 class _petdetailsState extends State<petdetails> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    readCounter();
+  }
+
   @override
   @override
   Widget build(BuildContext context) {
@@ -101,35 +108,44 @@ class _petdetailsState extends State<petdetails> {
                     padding: EdgeInsets.symmetric(
                         vertical: MediaQuery.sizeOf(context).height * 0.01,
                         horizontal: MediaQuery.sizeOf(context).width * 0.04),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Row(
                       children: [
-                        Text(
-                          "${widget.name}",
-                          style: const TextStyle(
-                              fontSize: 33, fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          "${widget.type}",
-                          style: TextStyle(color: Colors.grey[600]),
-                        ),
-                        Text(
-                          "Age :- ${widget.age}",
-                          style: TextStyle(color: Colors.grey[600]),
-                        ),
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.location_on_outlined,
-                              size: 17,
-                              color: Colors.grey[600],
+                            Text(
+                              "${widget.name}",
+                              style: const TextStyle(
+                                  fontSize: 33, fontWeight: FontWeight.w500),
                             ),
                             Text(
-                              "${widget.location}",
+                              "${widget.type}",
                               style: TextStyle(color: Colors.grey[600]),
+                            ),
+                            Text(
+                              "Age :- ${widget.age}",
+                              style: TextStyle(color: Colors.grey[600]),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on_outlined,
+                                  size: 17,
+                                  color: Colors.grey[600],
+                                ),
+                                Text(
+                                  "${widget.location}",
+                                  style: TextStyle(color: Colors.grey[600]),
+                                ),
+                              ],
                             ),
                           ],
                         ),
+                        Spacer(),
+                        Text(
+                          "Rs ${widget.price}",
+                          style: TextStyle(color: Colors.teal, fontSize: 25),
+                        )
                       ],
                     ),
                   ))
@@ -194,9 +210,8 @@ class _petdetailsState extends State<petdetails> {
 Future<void> updateLocalJsonFile(int petId) async {
   try {
     // Read the existing JSON file
-    File file = File('assets/db.json');
-    print(file);
-    String content = await rootBundle.loadString('assets/db.json');
+    File file = File('assets/db/db.json');
+    String content = await rootBundle.loadString('assets/db/db.json');
     Map<String, dynamic> jsonData = json.decode(content);
 
     // Assuming your JSON structure is something like {"pets": [...]}, adjust accordingly
@@ -209,12 +224,20 @@ Future<void> updateLocalJsonFile(int petId) async {
         break; // Stop searching once the pet is found
       }
     }
-
-    // Write back the updated data to the JSON file
     await file.writeAsString(json.encode(jsonData));
+    // Write back the updated data to the JSON file
 
     print("Local JSON file updated successfully!");
   } catch (error) {
     print("Error updating local JSON file: $error");
+  }
+}
+
+Future<String> readCounter() async {
+  try {
+    String jsonString = await rootBundle.loadString('assets/db/db.json');
+    return jsonString;
+  } catch (e) {
+    return "";
   }
 }

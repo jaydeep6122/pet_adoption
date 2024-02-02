@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_adoption/petdetails.dart';
 import 'package:pet_adoption/provider/pet_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -88,7 +89,18 @@ class _historypageState extends State<historypage> {
                       color: Colors.grey,
                     ),
                     onTap: () {
-                      // Add your onTap logic here
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => petdetails(
+                                  name: value.Adoptedpets[index].name,
+                                  type: value.Adoptedpets[index].type,
+                                  age: value.Adoptedpets[index].age,
+                                  location: value.Adoptedpets[index].location,
+                                  adopt: value.Adoptedpets[index].adopt,
+                                  index: index,
+                                  image: value.Adoptedpets[index].photourl,
+                                  price: value.Adoptedpets[index].price)));
                     },
                   ),
                 );

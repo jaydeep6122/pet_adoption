@@ -311,8 +311,8 @@ class _HomeState extends State<Home> {
                                                 value.pets[index].location,
                                             adopt: value.pets[index].adopt,
                                             index: index,
-                                            image:
-                                                value.pets[index].photourl)));
+                                            image: value.pets[index].photourl,
+                                            price: value.pets[index].price)));
                               },
                               child: Container(
                                 decoration: BoxDecoration(
