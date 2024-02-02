@@ -33,6 +33,8 @@ This Flutter project is a simple pet adoption app that allows users to view and 
     cd assets
     cd db
     run npx json-server --watch db.json
+
+    change localhost address with IP address
     
 3. **Run the App:**
 
