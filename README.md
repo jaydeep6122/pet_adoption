@@ -42,5 +42,6 @@ This Flutter project is a simple pet adoption app that allows users to view and 
 
 ## Screenshots
 
-###Home# pet_adoption
-# pet_adopt
+### Home
+
+![Home Page](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/home.jpg)
