@@ -45,3 +45,17 @@ This Flutter project is a simple pet adoption app that allows users to view and 
 ### Home
 
 ![Home Page](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/home.jpg)
+
+### Search
+![search](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/search.jpg)
+
+### filter By Category
+![filter](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/dogfilter.jpg)
+![Filter 2](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/catfilter.jpg)
+
+###  Details Page With Enable and Disable Adopt Button
+![details](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/enable.jpg)
+![disable](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/disable.jpg)
+
+### Dialog Box
+![Dialog box](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/dialog.jpg)
