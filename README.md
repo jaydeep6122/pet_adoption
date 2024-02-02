@@ -1,17 +1,46 @@
-# pet_adoption
+# Pet Adoption Flutter Project
 
-A new Flutter project.
+This Flutter project is a simple pet adoption app that allows users to view and adopt pets.
 
+## Features
+
+- Browse a list of available pets.
+- Mark a pet as adopted.
+- View details of each pet.
+- View details of adopted pet 
+- Animation Using Hero
+- Click on Adopt open Dialog with message
+  
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. **Clone the Repository:**
 
-A few resources to get you started if this is your first Flutter project:
+    ```bash
+    git clone https://github.com/jaydeep6122/pet_adoption.git
+    cd pet_adoption
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Install Dependencies:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# pet_adoption
+    ```bash
+    flutter pub get
+    ```
+3. **Start Json Server**
+    ```bash
+    Install Json Server
+    for more instruction "https://www.npmjs.com/package/json-server"
+    
+    cd assets
+    cd db
+    run npx json-server --watch db.json
+    
+3. **Run the App:**
+
+    ```bash
+    flutter run
+    ```
+
+## Screenshots
+
+###Home# pet_adoption
+# pet_adopt
