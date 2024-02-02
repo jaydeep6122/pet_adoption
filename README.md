@@ -59,3 +59,6 @@ This Flutter project is a simple pet adoption app that allows users to view and 
 
 ### Dialog Box
 ![Dialog box](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/dialog.jpg)
+
+### Adopted Pets History
+![History](https://github.com/jaydeep6122/pet_adoption/blob/main/Screenshots/history.jpg)
